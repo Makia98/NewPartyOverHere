@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="ADD YOUR POST"
+            android:text="ADD YOUR VENUE"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Describe your post......"
+            android:hint="Describe your venue......"
             app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
             app:boxCornerRadiusBottomStart="@dimen/corner_radius"
             app:boxCornerRadiusTopEnd="@dimen/corner_radius"

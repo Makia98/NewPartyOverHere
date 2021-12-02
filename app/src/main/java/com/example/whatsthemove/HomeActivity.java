@@ -10,10 +10,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.whatsthemove.Home.FeedRecyclerViewAdapter;
-import com.example.whatsthemove.Home.MyFeedItemList;
 import com.example.whatsthemove.databinding.ActivityHomeBinding;
 import com.example.whatsthemove.models.Post;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +30,7 @@ public class HomeActivity extends AppCompatActivity {
     ActivityHomeBinding binding;
     List<Post> myListData = new ArrayList<>();
     FeedRecyclerViewAdapter recyclerViewAdapter;
+    private Button btnBookNow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +49,16 @@ public class HomeActivity extends AppCompatActivity {
         binding.recyclerView.setItemAnimator(new DefaultItemAnimator());
         binding.recyclerView.setAdapter(recyclerViewAdapter);
 
+        //Button button;
+
 
     }
+
+
+    //public void openBookActivity () {
+     //   Intent intent = new Intent(HomeActivity.this, BookActivity.class);
+       // startActivity(intent);
+    //}
 
     private void setListeners() {
         binding.swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -65,6 +74,31 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, AddPostActivity.class));
             }
         });
+
+        //btnBookNow = findViewById(R.id.btnBookNow);
+        //btnBookNow.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View view) {
+                //Intent intent = new Intent(HomeActivity.this, BookActivity.class);
+                //openBookActivity();
+            //}
+        //});
+
+        //button = findViewById(R.id.btnBookNow);
+        //button.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View view) {
+                //Intent intent = new Intent(HomeActivity.this, BookActivity.class);
+                //openBookActivity();
+            //}
+        //});
+
+        //binding.btnBookNow.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View view) {
+                //startActivity(new Intent(HomeActivity.this, BookActivity.class));
+            //}
+        //});
 
         binding.btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,5 +144,10 @@ public class HomeActivity extends AppCompatActivity {
             binding.emptyLayout.getRoot().setVisibility(View.GONE);
             binding.recyclerView.setVisibility(View.VISIBLE);
         }
+    }
+
+    public void openBookActivity () {
+        Intent intent = new Intent(HomeActivity.this, BookActivity.class);
+        startActivity(intent);
     }
 }
